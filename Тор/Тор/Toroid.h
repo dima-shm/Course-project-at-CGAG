@@ -51,13 +51,13 @@ Toroid::Toroid(int R, int r)
 }
 void Toroid::Draw(CDC& dc, CMatrix& PView, CMatrix& PLight, CRect& RW, COLORREF Color, int Index)
 // –исует тор
-// dc - ссылка на класс CDC (MFC)
-// PView Ц координаты точки наблюдени€ в мировой сферической системе координат (r,fi(град.), q(град.))
-// PLight Ц координаты источника света в мировой сферической системе координат (r,fi(град.), q(град.))
-// RW Ц область в окне дл€ отображение
-// Color Ц цвет
-// Index = 0  ЧЧ  ƒиффузионна€ модель отражени€ света
-// Index = 1  ЧЧ  «еркальна€ модель отражени€ света
+// dc		  ЧЧ ссылка на класс CDC (MFC)
+// PView	  ЧЧ координаты точки наблюдени€ в мировой сферической системе координат (r,fi(град.), q(град.))
+// PLight	  ЧЧ координаты источника света в мировой сферической системе координат (r,fi(град.), q(град.))
+// RW		  ЧЧ область в окне дл€ отображение
+// Color	  ЧЧ цвет
+// Index = 0  ЧЧ диффузионна€ модель отражени€ света
+// Index = 1  ЧЧ зеркальна€ модель отражени€ света
 {
 	BYTE red = GetRValue(Color);
 	BYTE green = GetGValue(Color);
@@ -133,9 +133,9 @@ void Toroid::Draw(CDC& dc, CMatrix& PView, CMatrix& PLight, CRect& RW, COLORREF 
 				if (ScalarMult(VN, LightCart) >= 0)
 				{
 					if (Index == 0)
-						Lights = CosV1V2(VN, LightCart);
+						Lights = CosV1V2(LightCart, VN);	   // –асчет освещенности дл€ диффузионной модели освещени€
 					else if (Index == 1)
-						Lights = CosV1V2(LightCart - ViewCart, VN); // –асчет освещенности дл€ диффузионной модели освещени€
+						Lights = CosV1V2(LightCart, ViewCart); // –асчет освещенности дл€ зеркальной модели освещени€
 				}
 				else
 					Lights = 0;
@@ -186,9 +186,9 @@ void Toroid::Draw(CDC& dc, CMatrix& PView, CMatrix& PLight, CRect& RW, COLORREF 
 				if (ScalarMult(VN, LightCart) >= 0)
 				{
 					if (Index == 0)
-						Lights = CosV1V2(VN, LightCart);
+						Lights = CosV1V2(LightCart, VN);	   // –асчет освещенности дл€ диффузионной модели освещени€
 					else if (Index == 1)
-						Lights = CosV1V2(LightCart - ViewCart, VN); // –асчет освещенности дл€ диффузионной модели освещени€
+						Lights = CosV1V2(LightCart, ViewCart); // –асчет освещенности дл€ зеркальной модели освещени€
 				}
 				else
 					Lights = 0;

@@ -12,7 +12,7 @@ class CMainWnd : public CFrameWnd
 private:
 	CRect WinRect;  // Область в окне
 	CMatrix PView,  // Координаты точки наблюдения
-		PLight; // Координаты источника света
+			PLight; // Координаты источника света
 	CMenu menu;		// Объект меню из файла ресурсов
 	Toroid* toroid; // Объект тороида
 	COLORREF color; // Цвет тороида
