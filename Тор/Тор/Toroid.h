@@ -135,7 +135,17 @@ void Toroid::Draw(CDC& dc, CMatrix& PView, CMatrix& PLight, CRect& RW, COLORREF 
 					if (Index == 0)
 						Lights = CosV1V2(LightCart, VN);	   // Расчет освещенности для диффузионной модели освещения
 					else if (Index == 1)
-						Lights = CosV1V2(LightCart, ViewCart); // Расчет освещенности для зеркальной модели освещения
+					{
+						double cos_PN, xx, cos_A;			   // Расчет освещенности для зеркальной модели освещения
+						cos_PN = CosV1V2(LightCart, ViewCart);
+						xx = 2 * LightCart.Abs()*cos_PN / VN.Abs();
+						LightCart.RedimData(3);
+						CMatrix RX = -VN*xx + LightCart;
+						cos_A = CosV1V2(RX, ViewCart);
+						if (cos_A < 0)
+							Lights = cos_A*cos_A;
+						else Lights = 0;
+					}
 				}
 				else
 					Lights = 0;
@@ -188,7 +198,17 @@ void Toroid::Draw(CDC& dc, CMatrix& PView, CMatrix& PLight, CRect& RW, COLORREF 
 					if (Index == 0)
 						Lights = CosV1V2(LightCart, VN);	   // Расчет освещенности для диффузионной модели освещения
 					else if (Index == 1)
-						Lights = CosV1V2(LightCart, ViewCart); // Расчет освещенности для зеркальной модели освещения
+					{
+						double cos_PN, xx, cos_A;			   // Расчет освещенности для зеркальной модели освещения
+						cos_PN = CosV1V2(LightCart, ViewCart);
+						xx = 2 * LightCart.Abs()*cos_PN / VN.Abs();
+						LightCart.RedimData(3);
+						CMatrix RX = -VN*xx + LightCart;
+						cos_A = CosV1V2(RX, ViewCart);
+						if (cos_A < 0)
+							Lights = cos_A*cos_A;
+						else Lights = 0;
+					}
 				}
 				else
 					Lights = 0;

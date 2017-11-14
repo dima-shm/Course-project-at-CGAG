@@ -1,8 +1,8 @@
 ﻿  main.cpp
   _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
-d:\study\3 курс\1 семестр\курсовой\тор\тор\toroid.h(85): warning C4244: =: преобразование "double" в "LONG", возможна потеря данных
-d:\study\3 курс\1 семестр\курсовой\тор\тор\toroid.h(86): warning C4244: =: преобразование "double" в "LONG", возможна потеря данных
-d:\study\3 курс\1 семестр\курсовой\тор\тор\toroid.h(91): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-d:\study\3 курс\1 семестр\курсовой\тор\тор\toroid.h(114): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-d:\study\3 курс\1 семестр\курсовой\тор\тор\toroid.h(165): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-  Тор.vcxproj -> D:\Study\3 курс\1 семестр\Курсовой\Тор\Debug\Тор.exe
+d:\github\course-project-at-cgag\тор\тор\toroid.h(85): warning C4244: =: преобразование "double" в "LONG", возможна потеря данных
+d:\github\course-project-at-cgag\тор\тор\toroid.h(86): warning C4244: =: преобразование "double" в "LONG", возможна потеря данных
+d:\github\course-project-at-cgag\тор\тор\toroid.h(91): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+d:\github\course-project-at-cgag\тор\тор\toroid.h(114): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+d:\github\course-project-at-cgag\тор\тор\toroid.h(175): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  Тор.vcxproj -> D:\GitHub\Course-project-at-CGAG\Тор\Debug\Тор.exe

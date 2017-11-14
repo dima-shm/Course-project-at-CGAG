@@ -1,4 +1,5 @@
 #include "CMatrix.h"
+#include <math.h>
 #include <windows.h>
 
 CMatrix::CMatrix()
@@ -127,6 +128,14 @@ else
    exit(1);
   }
 return Temp;
+}
+CMatrix CMatrix::operator*(double x)
+// Умножение на число
+{
+	CMatrix Temp(*this);
+	for (int i = 0; i<n_rows; i++)
+		for (int j = 0; j<n_cols; j++) Temp(i, j) = Temp(i, j)*x;
+	return Temp;
 }
 CMatrix CMatrix::operator=(const CMatrix& M)
 // Оператор присваивания M1=M
@@ -317,4 +326,9 @@ double CMatrix::MinElement()
 	for(int i=0;i<(this->rows());i++)
 	  for(int j=0;j<(this->cols());j++) if ((*this)(i,j)<min) min=(*this)(i,j);
 	return min;
+}
+double CMatrix::Abs()
+// Длина вектора
+{
+	return sqrt(((*this)(0)*(*this)(0) + (*this)(1)*(*this)(1) + (*this)(2)*(*this)(2)));
 }

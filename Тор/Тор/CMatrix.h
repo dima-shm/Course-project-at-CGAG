@@ -17,6 +17,7 @@ public:
 	CMatrix operator-();			    // Оператор "-"
 	CMatrix operator=(const CMatrix&);	// Оператор "Присвоить":    M1=M2
 	CMatrix operator*(CMatrix&);        // Оператор "Произведение": М1*М2
+	CMatrix operator*(double);
 	CMatrix operator+(CMatrix&);	    // Оператор "+": M1+M2
 	CMatrix operator-(CMatrix&);	    // Оператор "-": M1-M2
 	CMatrix operator+(double);		    // Оператор "+": M+a
@@ -36,4 +37,5 @@ public:
                                         // которые можно сохранить
 	double MaxElement();			  	// Максимальный элемент матрицы
 	double MinElement();				// Минимальный элемент матрицы
+	double Abs();
 };
