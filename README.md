@@ -1,4 +1,4 @@
-# CalcOfQuantityPPI — «Учет потребности СИЗ»
+# Course-project-at-CGAG — «Тор»
 
 Desktop application at Computer Geometry and Graphics using C++ MFC
 
